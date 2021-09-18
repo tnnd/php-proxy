@@ -18,7 +18,7 @@ class XVideosPlugin extends AbstractPlugin {
 		if(preg_match('@setVideoUrlHigh\(\'([^\']+)@', $html, $matches)){
 			
 			$video_url = rawurldecode($matches[1]);
-			$player = vid_player($video_url, 938, 476, 'mp4');
+			$player = vid_player($video_url);	//, 938, 476, 'mp4');
 			
 			// insert our own video player
 			$html = Html::replace_inner("#video-player-bg", $player, $html);
